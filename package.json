@@ -1,0 +1,26 @@
+{
+  "name": "ngPromiseUnwrap",
+  "version": "0.0.0",
+  "description": "Allows for automatic unwrapping of promises in angular templates, by adding a new interpolation syntax",
+  "main": "/build/ngPromiseUnwrap.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rodyhaddad/ngPromiseUnwrap.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "rodyhaddad",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "karma": "~0.10.1",
+    "karma-chrome-launcher": "~0.1.0",
+    "grunt-karma": "~0.6.1",
+    "grunt-contrib-watch": "~0.5.2",
+    "karma-jasmine": "~0.1.0"
+  }
+}
