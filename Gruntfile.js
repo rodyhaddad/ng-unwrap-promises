@@ -36,6 +36,15 @@ module.exports = function (grunt) {
                     'build/<%= destName %>.min.js': ['build/<%= destName %>.js']
                 }
             }
+        },
+        jshint: {
+            files: ['src/**.js'],
+            options: {
+                expr: true,
+                globals: {
+                    angular: true
+                }
+            }
         }
 
     });
@@ -45,8 +54,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.registerTask('test', ['karma:unit']);
     grunt.registerTask('autotest', ['karma:autounit']);
     grunt.registerTask('build', ['concat', 'uglify']);
+    grunt.registerTask('lint', ['jshint']);
 };
