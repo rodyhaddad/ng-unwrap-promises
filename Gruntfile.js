@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
+        destName: "ng-unwrap-promises",
+        LICENSE: grunt.file.read('LICENSE'),
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
@@ -15,6 +16,26 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 autoWatch: true
             }
+        },
+        concat: {
+            options: {
+                separator: '\n\n',
+                banner: '/*! <%= pkg.name %> v<%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy") %> \n<%= LICENSE %>\n*/\n\n'
+            },
+            dist: {
+                src: ["src/**.js"],
+                dest: 'build/<%= destName %>.js'
+            }
+        },
+        uglify: {
+            options: {
+                preserveComments: 'some' //Licences
+            },
+            dist: {
+                files: {
+                    'build/<%= destName %>.min.js': ['build/<%= destName %>.js']
+                }
+            }
         }
 
     });
@@ -22,9 +43,10 @@ module.exports = function (grunt) {
     //Load karma plugin
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-watch');
-
-    grunt.loadTasks('tasks');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('test', ['karma:unit']);
     grunt.registerTask('autotest', ['karma:autounit']);
+    grunt.registerTask('build', ['concat', 'uglify']);
 };
