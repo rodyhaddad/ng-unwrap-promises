@@ -1,8 +1,8 @@
 'use strict';
 
-describe("[ngUnwrapPromises's tests] $interpolate", function() {
+describe("[ng-unwrap-promises's tests] $interpolate", function() {
 
-    beforeEach(module("ngUnwrapPromises"));
+    beforeEach(module("rh.unwrapPromises"));
 
     it('should return a function when there are no bindings and textOnly is undefined',
         inject(function($interpolate) {
@@ -276,7 +276,7 @@ describe("[ngUnwrapPromises's tests] $interpolate", function() {
     });
 
 
-    // ngUnwrapPromises Added stuff
+    // ng-unwrap-promises Added stuff
 
     it('should unwrap promises', inject(function ($rootScope, $q, $interpolate) {
         var def = $q.defer();

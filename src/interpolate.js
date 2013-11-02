@@ -36,7 +36,7 @@
  </doc:scenario>
  </doc:example>
  */
-angular.module("ngUnwrapPromises", []).provider("$interpolate", function $InterpolateProvider($parseProvider) {
+angular.module("rh.unwrapPromises", []).provider("$interpolate", function $InterpolateProvider($parseProvider) {
     var $interpolateMinErr = function () {
         var code = arguments[0],
             prefix = '[$interpolate:' + code + '] ',

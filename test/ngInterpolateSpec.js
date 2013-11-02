@@ -2,7 +2,7 @@
 
 describe("[angular's tests] $interpolate", function() {
 
-    beforeEach(module("ngUnwrapPromises"));
+    beforeEach(module("rh.unwrapPromises"));
 
     it('should return a function when there are no bindings and textOnly is undefined',
         inject(function($interpolate) {
