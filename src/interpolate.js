@@ -8,7 +8,8 @@
      *
      * @description
      *
-     * Used for configuring the interpolation markup. Defaults to `{{` and `}}`.
+     * Used for configuring the interpolation markup.
+     * Defaults to `{{` and `}}`, as well as `{||` and `||}` for expression requiring promise unwrapping.
      *
      * @example
      <doc:example module="customInterpolationApp">
