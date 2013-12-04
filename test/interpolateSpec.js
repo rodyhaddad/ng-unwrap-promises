@@ -190,8 +190,7 @@ describe("[ng-unwrap-promises's tests] $interpolate", function() {
             expect(parts[2].exp).toEqual("c");
         }));
 
-        // TODO angular/angular.js#4718 would allow for this to work
-        xit('should Parse Multiline', inject(function($interpolate) {
+        it('should Parse Multiline', inject(function($interpolate) {
             var parts = $interpolate('"X\nY{||A\n+B||}C\nD"').parts;
             expect(parts.length).toEqual(3);
             expect(parts[0]).toEqual('"X\nY');
