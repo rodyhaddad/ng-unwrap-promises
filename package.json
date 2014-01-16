@@ -1,6 +1,6 @@
 {
   "name": "ng-unwrap-promises",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Allows for automatic unwrapping of promises in angular templates, by adding a new interpolation syntax",
   "main": "/build/ng-unwrap-promises.js",
   "scripts": {
