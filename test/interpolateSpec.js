@@ -224,28 +224,28 @@ describe("[ng-unwrap-promises's tests] $interpolate", function() {
         }));
     });
 
-    describe('startSymbol.unwrapPromises', function() {
+    describe('startSymbol("rh.unwrapPromises")', function() {
 
         beforeEach(module(function($interpolateProvider) {
-            expect($interpolateProvider.startSymbol.unwrapPromises()).toBe('{||');
-            $interpolateProvider.startSymbol.unwrapPromises('((');
+            expect($interpolateProvider.startSymbol('rh.unwrapPromises')).toBe('{||');
+            $interpolateProvider.startSymbol('rh.unwrapPromises', '((');
         }));
 
 
         it('should expose the startSymbol.unwrapPromises in config phase', module(function($interpolateProvider) {
-            expect($interpolateProvider.startSymbol.unwrapPromises()).toBe('((');
+            expect($interpolateProvider.startSymbol('rh.unwrapPromises')).toBe('((');
         }));
 
 
         it('should expose the startSymbol.unwrapPromises in run phase', inject(function($interpolate) {
-            expect($interpolate.startSymbol.unwrapPromises()).toBe('((');
+            expect($interpolate.startSymbol('rh.unwrapPromises')).toBe('((');
         }));
 
 
         it('should not get confused by matching start and end symbols', function() {
             module(function($interpolateProvider) {
-                $interpolateProvider.startSymbol.unwrapPromises('--');
-                $interpolateProvider.endSymbol.unwrapPromises('--');
+                $interpolateProvider.startSymbol('rh.unwrapPromises', '--');
+                $interpolateProvider.endSymbol('rh.unwrapPromises', '--');
             });
 
             inject(function($interpolate) {
@@ -256,21 +256,21 @@ describe("[ng-unwrap-promises's tests] $interpolate", function() {
         });
     });
 
-    describe('endSymbol', function() {
+    describe('endSymbol("rh.unwrapPromises")', function() {
 
         beforeEach(module(function($interpolateProvider) {
-            expect($interpolateProvider.endSymbol.unwrapPromises()).toBe('||}');
-            $interpolateProvider.endSymbol.unwrapPromises('))');
+            expect($interpolateProvider.endSymbol('rh.unwrapPromises')).toBe('||}');
+            $interpolateProvider.endSymbol('rh.unwrapPromises', '))');
         }));
 
 
         it('should expose the endSymbol.unwrapPromises in config phase', module(function($interpolateProvider) {
-            expect($interpolateProvider.endSymbol.unwrapPromises()).toBe('))');
+            expect($interpolateProvider.endSymbol('rh.unwrapPromises')).toBe('))');
         }));
 
 
         it('should expose the endSymbol.unwrapPromises in run phase', inject(function($interpolate) {
-            expect($interpolate.endSymbol.unwrapPromises()).toBe('))');
+            expect($interpolate.endSymbol('rh.unwrapPromises')).toBe('))');
         }));
     });
 
